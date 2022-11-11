@@ -1,0 +1,50 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+//writing string of names in ascending order using command line argumets
+int main(int argc,char *argv[]){
+    for(int i=1;i<argc;i++){
+        for(int j=i+1;j<argc;j++){
+            char t[20];
+            if(strcmp(argv[i],argv[j])>0){
+                strcpy(t,argv[i]);
+                strcpy(argv[i],argv[j]);
+                strcpy(argv[j],t);
+            }
+        }
+    }
+    for(int i=1;i<argc;i++)
+    printf("%s\n",argv[i]);
+}
+
+//checking argv vector
+int main(int argc,char *argv[]){
+    for(int i=1;i<argc;i++)
+    printf("%d ",atoi(argv[i]));
+    printf("\n");
+    for(int i=1;i<argc;i++)
+    {
+    printf("%d ",atoi(*(i+argv)));
+    printf("%d ",atoi(*(argv+i)));
+    printf("%d ",atoi(argv[i]));
+    printf("%d ",atoi(i[argv]));
+    }
+}
+
+/*argc counts the no.arguments
+while argv[]/(vector)/ scans every argument along with file name as '0'th index
+argv[argc-1] is the last argument*/
+
+int main(int argc,char *argv[]){
+    for(int i=1;i<argc;i++)
+    printf("%d ",atoi(argv[i]));
+    printf("\n");
+    for(int i=1;i<argc;i++)
+    {
+    printf("%d ",atoi(*(i+argv)));
+    printf("%d ",atoi(*(argv+i)));
+    printf("%d ",atoi(argv[i]));
+    printf("%d ",atoi(i[argv]));
+    }
+}
