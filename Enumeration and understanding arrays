@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
+    int a[]={1,25,235,356,435};
+    printf("%p %u %d %d %d %d %d",a,a,a,*a,*a+7,*(a+1),*(a+9));
+}
+/* output - 00000081967ff930 2524969264 -1769998032 1 8 25 0*/
+
+//Another way of initializing
+int main(){
+    int a[]={[3]=134,[5]=13234,[15]=112};
+    for(int i=0;i<17;i++)
+    printf("%d ",*(a+i));
+}
+/* output - 0 0 0 134 0 13234 0 0 0 0 0 0 0 0 0 112 -1601891424*/
+
+int main(){
+    enum color_three{red,green,blue};
+    printf("%d %d %d",red,green,blue);
+    printf("\n");
+    for(int i=red;i<=blue;i++)
+    printf("%d ",i);
+    printf("\n");
+    enum hahaha{r=3,g=21,b,y=26} idk;
+    for(int i=r;i<=y;i++)
+    printf("%d ",i);
+    printf("\n");
+    idk=g;
+    printf("%d",idk);
+
+}
+/*0 1 2
+0 1 2 
+3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 
+21*/
+
+/*using 'enum' finding your month number like if july then 7 if november then 11
+I know its silly but just a little curious how to use this enum in projects 
+when a case like this arrived instead of using switch or if else, we can use "ENUM"*/
+int main(){
+    enum month{january,february,march,april,may,june,july,august,
+    september,october,november,december};//htnom; {typedef struct <name> <shortname>;}
+    //or
+    enum month htnom;
+    htnom=november;
+    printf("%d",htnom+1);
+}
